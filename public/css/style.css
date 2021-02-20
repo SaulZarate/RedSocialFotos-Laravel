@@ -84,3 +84,11 @@ form .avatar{
 .content-comment-image-detail .nick-name{
     font-weight: normal;
 }
+.number_likes{
+    font-size: 10px;
+    color: #444;
+}
+.btn-like,
+.btn-dislike{
+    cursor: pointer;
+}

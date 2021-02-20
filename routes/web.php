@@ -2,9 +2,8 @@
 
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\UserController;
-use App\Models\Comment;
-use App\Models\Image;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +23,7 @@ Route::get('/image/{id}', [ImageController::class, 'detail'])->name('image.detai
 
 Route::post('/comment/save', [CommentController::class, 'save'])->name('comment.save');
 Route::get('/comment/delete/{id}', [CommentController::class, 'delete'])->name('comment.delete');
+
+Route::get('/like/{image_id}', [LikeController::class, 'like'])->name('like.save');
+Route::get('/dislike/{image_id}', [LikeController::class, 'dislike'])->name('like.delete');
+Route::get('/likes', [LikeController::class, 'index'])->name('like.index');

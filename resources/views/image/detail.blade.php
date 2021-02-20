@@ -49,8 +49,16 @@
                         <span class="nick-name">{{'@'.$image->user->nick}}</span>
 
                         {{-- Likes --}}
-                        <div class="likes">
+                        {{-- <div class="likes">
                             <img src="{{asset('img/hearts-gray.png')}}" alt="corazon">
+                        </div> --}}
+                        <div class="likes">
+                            @if ( $image->likes->where('user_id',\Auth::user()->id)->count() == 1 )
+                                <img data-id="{{$image->id}}" src="{{asset('img/hearts-red.png')}}" alt="corazon rojo" class="btn-dislike">
+                            @else
+                                <img data-id="{{$image->id}}" src="{{asset('img/hearts-gray.png')}}" alt="corazon gris" class="btn-like">
+                            @endif
+                            <span class="number_likes">{{ count($image->likes) }}</span>
                         </div>
 
                         {{-- Description --}}
