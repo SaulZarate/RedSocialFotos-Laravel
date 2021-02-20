@@ -1,8 +1,9 @@
 
-@isset ($user->image)
 
-<div class="container-avatar">
-    <img src="{{ route('user.avatar',['filename'=>$user->image])}}" alt="" class="avatar">
-</div>
+@isset ( (Auth::user())->image )
+
+    <div class="container-avatar">
+        <img src="{{ route('user.avatar',['filename' => (Auth::user())->image]) }}" alt="avatar" class="avatar">
+    </div>
 
 @endisset

@@ -59,13 +59,15 @@
                             </li>
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="">Subir imagen</a>
+                                <a class="nav-link" href="{{route('image.create')}}">Subir imagen</a>
                             </li>
 
                             {{-- AVATAR --}}
-                            <li>
-                                @include('includes.avatar')
-                            </li>
+                            @if (Auth::user()->image)
+                                <li>
+                                    @include('includes.avatar')
+                                </li>
+                            @endif
 
                             {{-- MENU DESPLEGABLE --}}
                             <li class="nav-item dropdown">

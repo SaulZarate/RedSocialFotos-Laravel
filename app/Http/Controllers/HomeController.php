@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // Obtengo todas las imagenes
+        /* $images = Image::orderBy('id', 'desc')->simplePaginate(5); */
+        $images = Image::orderBy('id', 'desc')->paginate(5);
+
+        return view('home', [
+            'images' => $images
+        ]);
     }
 }

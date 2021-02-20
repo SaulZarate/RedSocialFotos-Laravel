@@ -51,7 +51,7 @@ return [
         ],
         
         /* Creo un disco para guardar las imagenes */
-        'image' => [
+        'images' => [
             'driver' => 'local',
             'root' => storage_path('app/images'),
             'url' => env('APP_URL').'/storage',
