@@ -14,7 +14,7 @@
                 
             {{-- Enlace al usuario --}}
             <div class="data-user home-data-user">
-                <a href="">
+                <a href="{{ route('user.profile', ['id' => $image->user->id ]) }}">
                     {{ ucfirst($image->user->name).' '.ucfirst($image->user->surname) }}
                     <span class="nick-name">{{' | @'.$image->user->nick}}</span>
                 </a>

@@ -92,3 +92,28 @@ form .avatar{
 .btn-dislike{
     cursor: pointer;
 }
+
+.content__user-perfil .user-image-perfil{
+    background-color: gray;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    border-radius: 900px;
+    overflow: hidden;
+    border: 2px solid #ddd;
+}
+.content__user-perfil .user-image-perfil img{
+    height: 100%;
+}
+.content__user-perfil .user-info-perfil h1{
+    font-size: 30px;
+    margin: 0;
+}
+.content__user-perfil .user-info-perfil h2{
+    font-size: 20px;
+    color: #444;
+}
+.content__user-perfil .user-info-perfil h3 {
+    font-size: 14px;
+    color: #444;
+}

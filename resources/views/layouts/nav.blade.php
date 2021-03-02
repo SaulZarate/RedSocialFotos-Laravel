@@ -58,7 +58,8 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
                             {{-- Mi Perfil --}}
-                            <a class="dropdown-item" href="">Mi perfil</a>
+                            <a class="dropdown-item" href="{{ route('user.profile', ['id' => Auth::user()->id]) }}">Mi perfil</a>
+
                             {{-- Configuracion --}}
                             <a class="dropdown-item" href="{{ route('config') }}">Configuración</a>
 
