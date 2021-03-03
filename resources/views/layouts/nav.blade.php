@@ -30,15 +30,18 @@
                     @endif
                 @else {{-- Users logeado --}}
 
+                    {{-- Inicio --}}
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('home')}}">Inicio</a>
                     </li>
 
+                    {{-- Gente --}}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('like.index')}}">Favoritos</a>
+                        <a class="nav-link" href="{{route('user.index')}}">Gente</a>
                     </li>
 
-                    <li class="nav-item">
+                    {{-- Subir imagen --}}
+                    <li class="nav-item mr-2">
                         <a class="nav-link" href="{{route('image.create')}}">Subir imagen</a>
                     </li>
 
@@ -56,9 +59,12 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
+                            
                             {{-- Mi Perfil --}}
                             <a class="dropdown-item" href="{{ route('user.profile', ['id' => Auth::user()->id]) }}">Mi perfil</a>
+                            
+                            {{-- Favoritos --}}
+                            <a class="dropdown-item" href="{{route('like.index')}}">Favoritos</a>
 
                             {{-- Configuracion --}}
                             <a class="dropdown-item" href="{{ route('config') }}">Configuración</a>

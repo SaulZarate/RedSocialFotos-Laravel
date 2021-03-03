@@ -117,7 +117,38 @@ form .avatar{
     font-size: 14px;
     color: #444;
 }
-
 .content_image-edit{
     text-align: center;
 }
+/* Seccion de usuarios */
+.content__users .user-image-perfil{
+    width: 150px;
+    height: 150px;
+}
+.content__users .user-info-perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.content__users .user-info-perfil h2{
+    font-size: 1.8em;
+    margin: 0;
+    font-weight: bold;
+}
+.content__users .user-info-perfil h3{
+    font-size: 1.3em;
+    color: gray;
+}
+.content__users .user-info-perfil h4{
+    font-size: 1em;
+    color: #000;
+}
+.content__users .user-info-perfil a{
+    transition: transform .5s;
+}
+.content__users .user-info-perfil a:hover{
+    text-decoration: none;
+    transform: scale(1.2);
+}
+

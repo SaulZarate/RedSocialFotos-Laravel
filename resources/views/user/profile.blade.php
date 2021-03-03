@@ -7,8 +7,7 @@
         <div class="row justify-content-center">
 
             {{-- Profile User --}}
-            <div class="col-md-3 px-3 mt-3">
-                    
+            <div class="col-md-3 px-3 pt-3 border">
                 <div class="row content__user-perfil text-center">
                     {{-- Image --}}
                     <div class="col-12 mb-3">
@@ -30,10 +29,11 @@
                         </h3>
                     </div>
                 </div>
-                
             </div>
 
+            {{-- Publicaciones/Imagenes --}}
             <div class="col-md-9">
+                <h1 class="text-center border p-2">Publicaciones</h1>
                 @foreach ($user->images as $image)
                     @include('includes.image', [ 'image' => $image])
                 @endforeach
