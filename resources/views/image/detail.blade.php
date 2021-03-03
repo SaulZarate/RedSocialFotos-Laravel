@@ -37,6 +37,7 @@
 
                 {{-- Card body --}}
                 <div class="card-body">
+
                     {{-- Imagen --}}
                     <div class="image-container image-detail">
                         <img src="{{ route('image.file', ['filename' => $image->image_path]) }}" alt="foto del usuario {{$image->user->name}}">
@@ -49,9 +50,6 @@
                         <span class="nick-name">{{'@'.$image->user->nick}}</span>
 
                         {{-- Likes --}}
-                        {{-- <div class="likes">
-                            <img src="{{asset('img/hearts-gray.png')}}" alt="corazon">
-                        </div> --}}
                         <div class="likes">
                             @if ( $image->likes->where('user_id',\Auth::user()->id)->count() == 1 )
                                 <img data-id="{{$image->id}}" src="{{asset('img/hearts-red.png')}}" alt="corazon rojo" class="btn-dislike">
@@ -63,6 +61,41 @@
 
                         {{-- Description --}}
                         <p>{{ ucfirst($image->description) }}</p>
+
+                        {{-- Actions de la imagen (publicacón) --}}
+                        @if ( $image->user->id === Auth::user()->id && Auth::user() )
+                            <div class="actions m-0">
+                                <a href="{{route('image.edit', ['id'=>$image->id])}}" class="btn btn-sm btn-success">Editar publicación</a>
+
+                                <!-- Button Modal-->
+                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal{{time()}}">
+                                    Borrar publicación
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal{{time()}}" tabindex="-1" role="dialog" aria-labelledby="modalLabel{{time()}}" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modalLabel{{time()}}">Confirmación</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Si eliminas esta imagen no podras recuperarla. ¿ Esta seguro ?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="{{route('image.delete', ['id' => $image->id])}}" class="btn btn-danger">Eliminar</a>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        @endif
+
+                        <hr>
 
                         {{-- Boton de comentarios --}}
                         <div class="commets">
@@ -81,10 +114,9 @@
                                 <p>{{ucfirst($comment->content)}}
                                     {{-- Eliminar comentario--}}
                                     @if( Auth::check() && ($comment->user_id == Auth::user()->id || (($comment->image) && $comment->image->user_id == Auth::user()->id)) )
-                                        <br><a href="{{route('comment.delete', ['id'=>$comment->id])}}">Eliminar comentario...</a>
+                                        <br><a href="{{route('comment.delete', ['id'=>$comment->id])}}" class="btn btn-danger btn-sm mt-2">Eliminar</a>
                                     @endif
                                 </p>
-                                
                             @endforeach
 
                             <hr> {{-- Separador --}}
@@ -102,15 +134,14 @@
                                         </span>
                                     @enderror
                                 </div>
-
                                 
-
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-sm btn-secondary">Comentar</button>
+                                    <button type="submit" class="btn btn-secondary">Comentar</button>
                                 </div>
                             </form>
 
                         </div>
+
                     </div>
                     
                 </div>
