@@ -46,11 +46,9 @@
                     </li>
 
                     {{-- AVATAR --}}
-                    @if (Auth::user()->image)
-                        <li>
-                            @include('includes.avatar')
-                        </li>
-                    @endif
+                    <li>
+                        @include('includes.avatar')
+                    </li>
 
                     {{-- MENU DESPLEGABLE --}}
                     <li class="nav-item dropdown">

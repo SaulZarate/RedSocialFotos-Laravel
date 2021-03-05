@@ -9,12 +9,12 @@ form .avatar{
     height: 35px;
     border-radius: 900px;
     overflow: hidden;
-    
 }
 
 .navbar .container-avatar img,
 .pub_image .container-avatar img{
     height: 100%;
+    
 }
 .pub_image{
     margin-bottom: 25px;
@@ -150,5 +150,17 @@ form .avatar{
 .content__users .user-info-perfil a:hover{
     text-decoration: none;
     transform: scale(1.2);
+}
+body div main{
+    min-height: 520px;
+}
+.footer{
+    box-shadow: 0 -0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+.footer p{
+    font-size: 1.1em;
+    text-align: center;
+    margin: 0;
+    padding: 15px 0;
 }
 

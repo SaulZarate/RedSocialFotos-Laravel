@@ -30,8 +30,48 @@
                         </div>
                     </div>
                     {{-- Fecha publicacion --}}
-                    <div>
-                        <p class="date-pub">{{ \Carbon\Carbon::now()->locale('es_AR')->diffForHumans($image->created_at) }}</p>
+                    <div class="d-flex align-items-center ">
+
+                        <p class="date-pub mr-3">{{ \Carbon\Carbon::now()->locale('es_AR')->diffForHumans($image->created_at) }}</p>
+
+                        {{-- Actions de la imagen (publicacón) --}}
+                        @if ( $image->user->id === Auth::user()->id && Auth::user() )
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="{{route('image.edit', ['id'=>$image->id])}}">Editar</a>
+                                    {{-- <a class="dropdown-item" href="#">Borrar</a> --}}
+
+                                    <!-- Button Modal-->
+                                    <button type="button" class="dropdown-item" data-toggle="modal" data-target="#modal{{time()}}">
+                                        Borrar publicación
+                                    </button>
+
+                                </div>
+                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal{{time()}}" tabindex="-1" role="dialog" aria-labelledby="modalLabel{{time()}}" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modalLabel{{time()}}">Confirmación</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Si eliminas esta imagen no podras recuperarla. ¿ Esta seguro ?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="{{route('image.delete', ['id' => $image->id])}}" class="btn btn-danger">Eliminar</a>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        @endif
+                        
                     </div>
                 </div>
 
@@ -62,12 +102,11 @@
                         {{-- Description --}}
                         <p>{{ ucfirst($image->description) }}</p>
 
-                        {{-- Actions de la imagen (publicacón) --}}
-                        @if ( $image->user->id === Auth::user()->id && Auth::user() )
+                        
                             <div class="actions m-0">
-                                <a href="{{route('image.edit', ['id'=>$image->id])}}" class="btn btn-sm btn-success">Editar publicación</a>
+                                {{-- <a href="{{route('image.edit', ['id'=>$image->id])}}" class="btn btn-sm btn-success">Editar publicación</a> --}}
 
-                                <!-- Button Modal-->
+                                {{-- <!-- Button Modal-->
                                 <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal{{time()}}">
                                     Borrar publicación
                                 </button>
@@ -90,10 +129,10 @@
                                         </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
 
                             </div>
-                        @endif
+                        
 
                         <hr>
 
@@ -114,7 +153,10 @@
                                 <p>{{ucfirst($comment->content)}}
                                     {{-- Eliminar comentario--}}
                                     @if( Auth::check() && ($comment->user_id == Auth::user()->id || (($comment->image) && $comment->image->user_id == Auth::user()->id)) )
-                                        <br><a href="{{route('comment.delete', ['id'=>$comment->id])}}" class="btn btn-danger btn-sm mt-2">Eliminar</a>
+                                        <br>
+                                        <a href="{{route('comment.delete', ['id'=>$comment->id])}}" class="btn btn-outline-danger btn-sm mt-2">
+                                            Eliminar
+                                        </a>
                                     @endif
                                 </p>
                             @endforeach

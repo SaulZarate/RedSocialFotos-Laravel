@@ -75,7 +75,7 @@ class RegisterController extends Controller
         
             /* AGREGADO PARA PROBAR */
             'role' => 'user',
-            'image' => '',
+            'image' => null,
         ]);
     }
 }

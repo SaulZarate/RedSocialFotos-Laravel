@@ -1,9 +1,9 @@
 
 
-@isset ( (Auth::user())->image )
+<div class="container-avatar">
+    @php
+        $srcImg = Storage::disk('users')->exists( (Auth::user())->image ) ? route('user.avatar', ['filename' => (Auth::user())->image ]) : asset('img/img-perfil.png');
+    @endphp
 
-    <div class="container-avatar">
-        <img src="{{ route('user.avatar',['filename' => (Auth::user())->image]) }}" alt="avatar" class="avatar">
-    </div>
-
-@endisset
+    <img src="{{ $srcImg }}" alt="avatar" class="avatar rounded">
+</div>

@@ -6,11 +6,12 @@
         <div class="d-flex align-items-center">
             
             {{-- Avatar del usuario --}}
-            @if ( $image->user->image )
-                <div class="container-avatar border mr-3">
-                    <img src="{{ route('user.avatar',['filename' => $image->user->image]) }}" alt="avatar" class="avatar">
-                </div>
-            @endif
+            <div class="container-avatar border mr-3">
+                @php
+                    $srcImg = Storage::disk('users')->exists( $image->user->image ) ? route('user.avatar',['filename' => $image->user->image]) : asset('img/img-perfil.png');
+                @endphp
+                <img src="{{ $srcImg }}" alt="avatar" class="avatar">
+            </div>
                 
             {{-- Enlace al usuario --}}
             <div class="data-user home-data-user">

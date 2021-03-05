@@ -85,9 +85,7 @@
 
                                 <div class="col-md-6">
                                     
-                                    @if ($user->image)
-                                        @include('includes.avatar')
-                                    @endif
+                                    @include('includes.avatar')
 
                                     <input id="image_path" type="file" @error('email') is-invalid @enderror" name="image_path" required autocomplete="image_path">
 
