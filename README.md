@@ -45,7 +45,18 @@ php artisan serve
 ## Autor ✒️
 
 * **Saúl Zarate** - *Desarrollador*
-
-
+---
+### Página principal
+![Pagina_principal]( https://github.com/SaulZarate/RedSocialFotos-Laravel/blob/main/Images-app/home.png )
+### Detalle de publicación
+![Detalle_de_publicacion]( https://github.com/SaulZarate/RedSocialFotos-Laravel/blob/main/Images-app/detalle_publicacion_de_otro_usuario.png )
+### Buscador de usuarios
+![Buscador_de_usuarios]( https://github.com/SaulZarate/RedSocialFotos-Laravel/blob/main/Images-app/buscador_de_usuarios.png )
+### Perfil de usuario
+![Perfil_de_usuario]( https://github.com/SaulZarate/RedSocialFotos-Laravel/blob/main/Images-app/perfil_de_otro_usuario.png )
+### Publicaciones favoritas
+![Publicaciones_favoritas]( https://github.com/SaulZarate/RedSocialFotos-Laravel/blob/main/Images-app/publicaciones_favoritas.png )
+### Configuración del cuenta
+![Configuracion_del_perfil]( https://github.com/SaulZarate/RedSocialFotos-Laravel/blob/main/Images-app/configuracion_de_perfil.png )
 ---
 ⌨️ con ❤️ por [Saúl Zarate](https://github.com/SaulZarate) 😊
