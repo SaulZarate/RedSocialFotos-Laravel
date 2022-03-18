@@ -22,8 +22,6 @@ git clone https://github.com/SaulZarate/RedSocialFotos-Laravel.git
 ### Instalación 🔧
 
 
-_Dí cómo será ese paso_
-
 ```
 - Clonar el repositorio
 - Instalar dependencias: composer install
@@ -38,16 +36,13 @@ Finalmente, ejecutar laravel
 php artisan serve
 ```
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
-
-
 ## Construido con 🛠️
 
 * [PHP](https://www.php.net/) - Lenguaje de programación usado
 * [Laravel 8](https://laravel.com/docs/8.x) - Framework web usado
 * [Composer](https://getcomposer.org/) - Manejador de dependencias
 
-## Autores ✒️
+## Autor ✒️
 
 * **Saúl Zarate** - *Desarrollador*
 
