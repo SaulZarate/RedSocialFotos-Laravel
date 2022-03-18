@@ -24,7 +24,7 @@ class ImageFactory extends Factory
     {
         return [
             'user_id' => $this->faker->numberBetween(1,15),
-            'image_path' => $this->faker->randomElement([Str::random(8).".jpg",Str::random(6).".png",Str::random(4)]),
+            'image_path' => $this->faker->randomElement(["image-".strval(random_int(1,5)).".jpg"]),
             'description' => $this->faker->paragraph(8,true)
         ];
     }
