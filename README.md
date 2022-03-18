@@ -27,25 +27,17 @@ git clone https://github.com/SaulZarate/RedSocialFotos-Laravel.git
 - Instalar dependencias: composer install
 - Crear una base de datos
 - Copiar el archivo .env.exampe y cambiarle el nombre a: .env
-- Configurar el archivo .env con la información de tu base de datos
+- Configurar el archivo .env con la información de su base de datos
 - Ejecutar las migraciones y los seeders: php artisan migrate --seed
 ```
 
-Finalmente, ejecutar laravel
+Finalmente, ejecute laravel
 ```
 php artisan serve
 ```
 
-## Construido con 🛠️
+## Secciones de la aplicación
 
-* [PHP](https://www.php.net/) - Lenguaje de programación usado
-* [Laravel 8](https://laravel.com/docs/8.x) - Framework web usado
-* [Composer](https://getcomposer.org/) - Manejador de dependencias
-
-## Autor ✒️
-
-* **Saúl Zarate** - *Desarrollador*
----
 ### Página principal
 ![Pagina_principal]( https://github.com/SaulZarate/RedSocialFotos-Laravel/blob/main/Images-app/home.png )
 ### Detalle de publicación
@@ -58,5 +50,16 @@ php artisan serve
 ![Publicaciones_favoritas]( https://github.com/SaulZarate/RedSocialFotos-Laravel/blob/main/Images-app/publicaciones_favoritas.png )
 ### Configuración del cuenta
 ![Configuracion_del_perfil]( https://github.com/SaulZarate/RedSocialFotos-Laravel/blob/main/Images-app/configuracion_de_perfil.png )
+
+## Construido con 🛠️
+
+* [PHP](https://www.php.net/) - Lenguaje de programación usado
+* [Laravel 8](https://laravel.com/docs/8.x) - Framework web usado
+* [Composer](https://getcomposer.org/) - Manejador de dependencias
+
+## Autor ✒️
+
+* **Saúl Zarate** - *Desarrollador*
+
 ---
-⌨️ con ❤️ por [Saúl Zarate](https://github.com/SaulZarate) 😊
+ ⌨️ con ❤️ por [Saúl Zarate](https://github.com/SaulZarate) 😊 
